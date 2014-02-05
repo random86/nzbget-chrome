@@ -103,7 +103,7 @@
 		xhr.onreadystatechange = function(){
 			if (xhr.readyState == 4) {
 				if(xhr.status == 200) {
-					if(xhr.getResponseHeader('Content-Type') === "application/x-nzb") {
+					if(xhr.getResponseHeader('Content-Type').search("x-nzb") != null) {
 						/* Replace NZB file name with the one specified in response header if available. */
 						var disposition = xhr.getResponseHeader('Content-Disposition');
 						if(disposition) {
